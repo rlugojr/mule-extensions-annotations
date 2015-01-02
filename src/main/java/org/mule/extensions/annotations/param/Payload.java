@@ -19,7 +19,7 @@ import java.lang.annotation.Target;
  * has a number of standard transformers for dealing with common Java types such as
  * XML documents, streams, byte arrays, strings, etc.
  *
- * @since 1.0.0
+ * @since 1.0
  */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)

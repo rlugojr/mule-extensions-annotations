@@ -20,7 +20,7 @@ import java.lang.annotation.Target;
  * - It must be public
  * - It cannot have a typed parameter (no generic)
  *
- * @since 1.0.0
+ * @since 1.0
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

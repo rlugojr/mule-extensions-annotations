@@ -13,18 +13,26 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marks a field inside a mule extension as being configurable. A user will be able to use attributes to set this
- * bean properties when using the Module.
+ * Marks a field inside a mule extension as being a parameter that the user can set.
+ * It can either be applied
+ * to a class defining a configuration, or to a class in which operations are implemented.
+ * <p/>
+ * If applied to an operation class, then the parameter will be added to all the operations defined in that
+ * class.
  * <p/>
  * The field must be a Java bean property (ie it needs to have setters and getters matching the field name).
  *
- * @since 1.0.0
+ * @since 1.0
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Configurable
+public @interface Parameter
 {
 
+    /**
+     * If {@code false} then this parameter does not support expressions
+     * @return {@code true} if the parameter supports expressions. {@code false} otherwise
+     */
     boolean isDynamic() default true;
 }

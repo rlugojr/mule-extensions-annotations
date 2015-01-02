@@ -18,20 +18,12 @@ import java.lang.annotation.Target;
  * <p/>
  * Each argument on this method will be featured as a parameter
  *
- * @since 1.0.0
+ * @since 1.0
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Operation
 {
-
-    /**
-     * The name of the element that will invoke this processor. This is optional and if it is not specified a name
-     * will be derived from the name of the method.
-     */
-    String name() default "";
-
-    Class<?>[] acceptedPayloadTypes() default Object.class;
 
 }

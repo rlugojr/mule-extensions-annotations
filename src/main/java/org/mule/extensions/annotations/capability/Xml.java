@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
  * Signals that the mule extension should be configurable and
  * usable through a Mule XML config file
  *
- * @since 1.0.0
+ * @since 1.0
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

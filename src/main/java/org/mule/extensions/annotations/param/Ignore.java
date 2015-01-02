@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
  * The purpose is to signal that a given field or setter should not be used
  * when building instances of a class
  *
- * @since 1.0.0
+ * @since 1.0
  */
 @Target(value = {ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

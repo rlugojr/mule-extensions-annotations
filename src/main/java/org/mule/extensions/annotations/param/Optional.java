@@ -6,7 +6,7 @@
  */
 package org.mule.extensions.annotations.param;
 
-import org.mule.extensions.annotations.Configurable;
+import org.mule.extensions.annotations.Parameter;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -15,11 +15,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marks a {@link Configurable} field a optional.
+ * Marks a {@link Parameter} field a optional.
  * All configurable attributes that don't include this annotation are
  * considered required
  *
- * @since 1.0.0
+ * @since 1.0
  */
 @Target(value = {ElementType.PARAMETER, ElementType.FIELD, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
