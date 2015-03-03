@@ -4,9 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.extensions.annotations.param;
-
-import org.mule.extensions.annotations.Parameter;
+package org.mule.extension.annotations.lifecycle;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -14,18 +12,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * Marks a {@link Parameter} field a optional.
- * All configurable attributes that don't include this annotation are
- * considered required
- *
- * @since 1.0
- */
-@Target(value = {ElementType.PARAMETER, ElementType.FIELD, ElementType.METHOD})
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Optional
+public @interface Start
 {
 
-    String defaultValue() default "";
 }

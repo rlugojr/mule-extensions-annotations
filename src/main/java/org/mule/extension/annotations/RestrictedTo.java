@@ -1,4 +1,4 @@
-package org.mule.extensions.annotations;
+package org.mule.extension.annotations;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
