@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
  *     @Extension
  *     public class MyExtension {
  *
- *         @Parameters
+ *         @ParameterGroup
  *         private Options options;
  *     }
  *
@@ -36,33 +36,9 @@ import java.lang.annotation.Target;
  * <p/>
  * The outcome of the code above is a configuration with two parameters called 'color' and 'mode', one required and the other optional.
  * The configuration has no attribute called options. If the Options class were to have another field also annotated with
- * {@link Parameters}, then such fields will be ignored.
+ * {@link ParameterGroup}, then such fields will be ignored.
  * <p/>
- * In the same way, the annotation can be applied to a class holding operations:
- * <pre>
- *     {@code
- *
- *     public class Operations {
- *
- *         @Parameters
- *         private Options options;
- *
- *         @Operation
- *         public void hello(String message) {
- *             ...
- *         }
- *
- *         @Operation
- *         public void goodBye(String message) {
- *
- *         }
- *     }
- * </pre>
- * <p/>
- * In this case, both operations will have three parameters: message, color and mode.
- * <p/>
- * The last use case for this annotation is to have nested parameter classes:
- * <pre>
+ * It can also be used to define a hierarchy of nested parameter classes:
  * <pre>
  *     {@code
  *
@@ -75,25 +51,47 @@ import java.lang.annotation.Target;
  *          @Optional
  *          private String mode;
  *
- *          @Parameters
+ *          @ParameterGroup
  *          private MoreOptions moreOptions;
  *     }
  *     }
  * </pre>
- * </pre>
- * In this last example, the configuration/operation that is augmented with this extra parameters
+ * In this other example, the configuration that is augmented with this extra parameters
  * will have the sum of Options and MoreOptions parameters. Those parameters will be flattened, meaning
  * that the model will contain no reference to the fact that the MoreOptions parameters were nested inside
- * Options.
+ * Options. Each field annotated with this annotation must be a Java bean property
+ * (i.e: it needs to have setters and getters matching the field name).
  * <p/>
- * The field must be a Java bean property (ie it needs to have setters and getters matching the field name).
+ * Lastly, the annotation can be applied to a method which is defining an operation:
+ * <pre>
+ *     {@code
+ *
+ *     public class Operations {
+ *
+ *         @Operation
+ *         public void hello(String message, @ParameterGroup Options options) {
+ *             ...
+ *         }
+ *
+ *         @Operation
+ *         public void goodBye(String message, @ParameterGroup Options options) {
+ *
+ *         }
+ *     }
+ * </pre>
+ * <p/>
+ * In this case, both operations will have three parameters: message, color and mode.
+ * <p/>
+ * Another consideration is that no parameter (in either a configuration or operation)
+ * obtained through this annotation can have a name which collides with a parameter
+ * defined in the top level class or in a superior group of the parameter group hierarchy
  *
  * @since 1.0
  */
-@Target({ElementType.FIELD})
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Parameters
+public @interface ParameterGroup
 {
 
 }
