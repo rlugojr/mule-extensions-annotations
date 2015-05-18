@@ -27,5 +27,30 @@ import java.lang.annotation.Target;
 public @interface Optional
 {
 
-    String defaultValue() default "";
+    /**
+     * The default value to use if the
+     * user doesn't specify a value
+     * for the parameter. It can be
+     * the value itself or an expression.
+     *
+     * Since {@code null} values are not
+     * allowed as default values in
+     * java annotations, the special
+     * {@link #NULL} value was to created
+     * to reference that the parameter
+     * should default to {@code null}
+     *
+     * @return the default value
+     */
+    String defaultValue() default NULL;
+
+    /**
+     * Because Java doesn't allow
+     * {@code null} values as defaults
+     * in annotations, this value is
+     * used to represent a {@code null}.
+     * This value should only be used
+     * by the platform
+     */
+    String NULL = "THIS IS A SPECIAL NULL VALUE - DO NOT USE";
 }
