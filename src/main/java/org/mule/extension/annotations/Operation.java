@@ -13,9 +13,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * This annotation marks a method inside a extension class as a callable
- * from within a Mule runtime, defining an operation.
- * <p/>
+ * Marks a method as an operation that can be invoked from a
+ * {@code org.mule.api.processor.MessageProcessor} in a flow.
  * Each argument on this method will be featured as a parameter
  *
  * @since 1.0

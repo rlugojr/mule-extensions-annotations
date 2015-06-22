@@ -32,9 +32,10 @@ public @interface Parameter
 {
 
     /**
-     * If {@code false} then this parameter does not support expressions
+     * A parameter is considered to be dynamic if it's value can change in runtime
+     * depending on contextual circumstances. E.g.: the parameter value is a MEL expression
      *
-     * @return {@code true} if the parameter supports expressions. {@code false} otherwise
+     * @return whether this parameter is dynamic or not. Defaults to {@code true}
      */
     boolean isDynamic() default true;
 
