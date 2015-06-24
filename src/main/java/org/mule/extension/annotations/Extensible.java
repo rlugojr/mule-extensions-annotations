@@ -15,11 +15,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * This annotation denotes that a given type can be extended
- * by others. The actual implications of 'can be extended'
- * depends on the context. For example, in the case of an extension
- * annotated with {@link Xml}, it means that this extensible member
- * will generate a substitution group that implementing ones will be a part of.
+ * Denotes that a given type can be extended by others.
+ * <p/>
+ * The actual implications of 'can be extended' depends on the context. For example, in the case of an extension
+ * annotated with {@link Xml}, it means that this extensible member will generate a substitution group that implementing
+ * ones will be a part of.
  * <p/>
  * This annotation is meant to be used on classes holding methods annotated
  * with {@link Operation} and all operations defined on that class will be considerable
