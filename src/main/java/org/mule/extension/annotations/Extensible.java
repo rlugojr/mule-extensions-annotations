@@ -25,10 +25,10 @@ import java.lang.annotation.Target;
  * with {@link Operation} and all operations defined on that class will be considerable
  * extensible.
  * <p/>
- * Implementation of this extensible type are marked using the {@link ImplementationOf}
+ * Implementation of this extensible type are marked using the {@link ExtensionOf}
  * annotation
  *
- * @see {@link ImplementationOf}
+ * @see {@link ExtensionOf}
  * @since 1.0.0
  */
 @Target(ElementType.TYPE)
