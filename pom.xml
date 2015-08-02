@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mule.extensions</groupId>
     <artifactId>mule-extensions-annotations</artifactId>
-    <version>1.0.0-alpha-1-SNAPSHOT</version>
+    <version>1.0.0-alpha-1</version>
     <packaging>jar</packaging>
     <name>Mule Extensions Annotations</name>
     <description>A set of Annotations to facilitate the development of Mule extensions through the Mule Extensions API</description>
