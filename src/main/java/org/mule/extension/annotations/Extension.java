@@ -40,11 +40,6 @@ public @interface Extension
     String description() default "";
 
     /**
-     * Specifies the version of this extension
-     */
-    String version();
-
-    /**
      * Name of the configuration element
      */
     String configElementName() default DEFAULT_CONFIG_NAME;
