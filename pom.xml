@@ -100,6 +100,14 @@
         <url>https://github.com/mulesoft/mule-extensions-annotations</url>
     </scm>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.mule.extensions</groupId>
+            <artifactId>mule-extensions-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <pluginManagement>
             <plugins>
