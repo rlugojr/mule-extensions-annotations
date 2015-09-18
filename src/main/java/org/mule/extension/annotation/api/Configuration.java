@@ -4,7 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.extension.annotations;
+package org.mule.extension.annotation.api;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 
 /**
  * Used to express that a class should be used to describe
- * a {@code org.mule.extension.introspection.Configuration} model.
+ * a {@code org.mule.extension.api.introspection.Configuration} model.
  * The class will be scanned for fields annotated with {@link Parameter}
  * or {@link ParameterGroup} to obtain that configuration's parameters
  *

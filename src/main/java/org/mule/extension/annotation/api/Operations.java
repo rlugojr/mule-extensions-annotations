@@ -4,10 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.extension.annotations.connector;
-
-import org.mule.extension.connection.ConnectionHandler;
-import org.mule.extension.introspection.ConfigurationModel;
+package org.mule.extension.annotation.api;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -16,21 +13,21 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * To be applied on a class which is being used to describe a {@link ConfigurationModel},
- * in order to express that such configuration requires connectivity services
+ * Allows to reference a list of classes from which an Extension's operations are to be
+ * inferred. This annotation is to be used in classes which are also annotated with
+ * {@link Extension} and {@link #value()} must reference classes which contain public
+ * methods annotated with {@link Operation}
  *
  * @since 1.0
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Connector
+public @interface Operations
 {
 
     /**
-     * The {@link Class} of the {@link ConnectionHandler} to be used
-     *
-     * @return a {@link Class} which has {@link ConnectionHandler} as an interface
+     * @return An array of classes which contain public methods annotated with {@link Operation}
      */
-    Class<? extends ConnectionHandler> value();
+    Class<?>[] value();
 }

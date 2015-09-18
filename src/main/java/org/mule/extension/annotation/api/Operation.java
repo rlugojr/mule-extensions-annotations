@@ -4,7 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.extension.annotations.param;
+package org.mule.extension.annotation.api;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -13,17 +13,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Ignores a field or method inside a complex type. Only usable in complex types.
- * The purpose is to signal that a given field or setter should not be used
- * when building instances of a class
+ * Marks a method as an operation that can be invoked from a
+ * {@code org.mule.api.processor.MessageProcessor} in a flow.
+ * Each argument on this method will be featured as a parameter
  *
  * @since 1.0
  */
-@Target(value = {ElementType.FIELD, ElementType.METHOD})
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Ignore
+public @interface Operation
 {
 
 }
-
