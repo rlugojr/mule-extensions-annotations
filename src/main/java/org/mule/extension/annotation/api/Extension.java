@@ -4,7 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.extension.annotations;
+package org.mule.extension.annotation.api;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -30,7 +30,7 @@ public @interface Extension
 
     /**
      * A name consistent with the definition on
-     * {@link org.mule.extension.introspection.Extension#getName()}
+     * {@link org.mule.extension.api.introspection.Extension#getName()}
      */
     String name();
 

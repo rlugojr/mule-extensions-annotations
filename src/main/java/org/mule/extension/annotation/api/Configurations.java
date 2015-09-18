@@ -4,7 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.extension.annotations;
+package org.mule.extension.annotation.api;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -13,7 +13,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Allows to reference a list of classes from which a {@code org.mule.extension.introspection.Configuration}
+ * Allows to reference a list of classes from which a {@code org.mule.extension.api.introspection.Configuration}
  * model is to be inferred. This annotation is to be used in classes which are also annotated with
  * {@link Extension} and {@link #value()} must reference classes which are annotated with {@link Configuration}
  *

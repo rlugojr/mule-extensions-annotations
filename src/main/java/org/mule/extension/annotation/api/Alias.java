@@ -4,7 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.extension.annotations;
+package org.mule.extension.annotation.api;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -13,16 +13,20 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marks a method as an operation that can be invoked from a
- * {@code org.mule.api.processor.MessageProcessor} in a flow.
- * Each argument on this method will be featured as a parameter
+ * Defines an alias for a Java type. Implementations of the
+ * extensions API can use this annotation in many ways, but
+ * in general terms it's useful to allow a Java type to
+ * have a name which makes sense from a coding point of view
+ * while maintaining a user friendly name in the places
+ * where the extensions API exposes such type
  *
  * @since 1.0
  */
-@Target(ElementType.METHOD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Operation
+public @interface Alias
 {
 
+    String value();
 }

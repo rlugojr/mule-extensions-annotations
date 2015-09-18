@@ -4,9 +4,9 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.extension.annotations;
+package org.mule.extension.annotation.api;
 
-import org.mule.extension.annotations.capability.Xml;
+import org.mule.extension.annotation.api.capability.Xml;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
