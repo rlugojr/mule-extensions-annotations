@@ -6,6 +6,9 @@
  */
 package org.mule.extension.annotation.api;
 
+import static org.mule.extension.api.introspection.ExpressionSupport.SUPPORTED;
+import org.mule.extension.api.introspection.ExpressionSupport;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -17,10 +20,10 @@ import java.lang.reflect.Field;
  * Marks a field inside a mule extension as being a parameter that the user can set.
  * It can either be applied
  * to a class defining a configuration, or to a class in which operations are implemented.
- * <p/>
+ * <p>
  * If applied to an operation class, then the parameter will be added to all the operations defined in that
  * class.
- * <p/>
+ * <p>
  * The field must be a Java bean property (ie it needs to have setters and getters matching the field name).
  *
  * @since 1.0
@@ -32,12 +35,14 @@ public @interface Parameter
 {
 
     /**
-     * A parameter is considered to be dynamic if it's value can change in runtime
-     * depending on contextual circumstances. E.g.: the parameter value is a MEL expression
+     * The type of expression support that parameters defined through this annotations
+     * should have.
+     * <p>
+     * Defaults to {@link ExpressionSupport#SUPPORTED}
      *
-     * @return whether this parameter is dynamic or not. Defaults to {@code true}
+     * @return a {@link ExpressionSupport}
      */
-    boolean isDynamic() default true;
+    ExpressionSupport expressionSupport() default SUPPORTED;
 
     /**
      * If provided, sets the name that the parameter will have on the introspection model.
