@@ -6,8 +6,8 @@
  */
 package org.mule.extension.annotation.api.connector;
 
-import org.mule.extension.api.connection.ConnectionHandler;
-import org.mule.extension.api.introspection.ConfigurationModel;
+import org.mule.extension.annotation.api.Extension;
+import org.mule.extension.api.connection.ConnectionProvider;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -16,21 +16,21 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * To be applied on a class which is being used to describe a {@link ConfigurationModel},
- * in order to express that such configuration requires connectivity services
+ * Annotation to be used on a {@link Class} also annotated with {@link Extension}, to list
+ * the {@link ConnectionProvider}s that the extension exposes.
  *
  * @since 1.0
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface Connector
+public @interface Providers
 {
 
     /**
-     * The {@link Class} of the {@link ConnectionHandler} to be used
+     * An array of classes which implement the {@link ConnectionProvider} interface.
      *
-     * @return a {@link Class} which has {@link ConnectionHandler} as an interface
+     * @return A not empty array
      */
-    Class<? extends ConnectionHandler> value();
+    Class<? extends ConnectionProvider>[] value();
 }
