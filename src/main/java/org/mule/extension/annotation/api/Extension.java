@@ -6,6 +6,8 @@
  */
 package org.mule.extension.annotation.api;
 
+import org.mule.extension.api.introspection.ExtensionModel;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -29,8 +31,7 @@ public @interface Extension
 {
 
     /**
-     * A name consistent with the definition on
-     * {@link org.mule.extension.api.introspection.Extension#getName()}
+     * A name consistent with the definition on {@link ExtensionModel#getName()}
      */
     String name();
 
