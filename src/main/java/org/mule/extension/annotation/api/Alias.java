@@ -28,5 +28,16 @@ import java.lang.annotation.Target;
 public @interface Alias
 {
 
+    /**
+     * @return The alias of the annotated member
+     */
     String value();
+
+    /**
+     * An optional description to further describe the annotated
+     * member
+     *
+     * @return a nullable {@link String}
+     */
+    String description() default "";
 }
