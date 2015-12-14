@@ -21,7 +21,7 @@ import java.lang.annotation.Target;
  *
  * @since 1.0
  */
-@Target(value = {ElementType.PARAMETER, ElementType.FIELD, ElementType.METHOD})
+@Target(value = {ElementType.PARAMETER, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Optional
