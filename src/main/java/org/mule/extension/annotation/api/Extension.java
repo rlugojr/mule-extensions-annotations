@@ -41,10 +41,16 @@ public @interface Extension
     String description() default "";
 
     /**
+     * Name of the extension's vendor
+     */
+    String vendor() default NO_VENDOR;
+
+    /**
      * Name of the configuration element
      */
     String configElementName() default DEFAULT_CONFIG_NAME;
 
+    String NO_VENDOR = "";
 
     String DEFAULT_CONFIG_NAME = "config";
 
