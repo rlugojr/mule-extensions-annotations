@@ -13,8 +13,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Signals that the mule extension should be configurable and
- * usable through a Mule XML config file
+ * Allows the customization of the schema attributes.
+ * If absent then the runtime will calculate default values for each attribute.
+ * If present you can add all the attributes or just the ones you need.
  *
  * @since 1.0
  */
@@ -31,13 +32,20 @@ public @interface Xml
     String schemaVersion() default "";
 
     /**
-     * Extension's namespace
+     * Extension's namespace. If left empty it will create a default one
+     * based on the extension's name, removing the words "extension", "module" or "connector"
+     * at the end if they are present and hyphenizing the resulting name.
+     * <pre>
+     * Mulesoft Extension           = mulesoft
+     * Cloud Service Connector      = cloud-service
+     * Extension                    = extension
+     * </pre>
      */
-    String namespace();
+    String namespace() default "";
 
     /**
      * Location URI for the schema. If left empty it will default to
-     * &quot;http://www.mulesoft.org/schema/mule/extension/&lt;&lt;extension_name&gt;&gt;
+     * &quot;http://www.mulesoft.org/schema/mule/&lt;&lt;extension_namespace&gt;&gt;
      */
     String schemaLocation() default "";
 
