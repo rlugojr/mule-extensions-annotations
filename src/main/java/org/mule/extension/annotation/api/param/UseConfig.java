@@ -6,22 +6,26 @@
  */
 package org.mule.extension.annotation.api.param;
 
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.PARAMETER;
 import org.mule.extension.annotation.api.Operation;
+import org.mule.extension.api.runtime.source.Source;
 
 import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.lang.reflect.Method;
 
 /**
- * Signals that an argument of a {@link Method} annotated with {@link Operation} should be assigned
- * to the configuration instance on which the operation is being executed.
+ * Indicates that the annotated member should be injected with the currently active configuration instance.
+ * <p>
+ * This annotation can either be applied to an argument of a method annotated with {@link Operation}
+ * or to a field of a class which extends the {@link Source} class.
+ * It is not to be used on configurations
  *
  * @since 1.0
  */
-@Target(value = {ElementType.PARAMETER})
+@Target(value = {PARAMETER, FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface UseConfig
