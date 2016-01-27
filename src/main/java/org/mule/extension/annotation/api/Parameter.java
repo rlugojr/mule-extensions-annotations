@@ -6,9 +6,6 @@
  */
 package org.mule.extension.annotation.api;
 
-import static org.mule.extension.api.introspection.ExpressionSupport.SUPPORTED;
-import org.mule.extension.api.introspection.ExpressionSupport;
-
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -33,17 +30,6 @@ import java.lang.reflect.Field;
 @Documented
 public @interface Parameter
 {
-
-    /**
-     * The type of expression support that parameters defined through this annotations
-     * should have.
-     * <p>
-     * Defaults to {@link ExpressionSupport#SUPPORTED}
-     *
-     * @return a {@link ExpressionSupport}
-     */
-    ExpressionSupport expressionSupport() default SUPPORTED;
-
     /**
      * If provided, sets the name that the parameter will have on the introspection model.
      * Otherwise, the name of the annotated {@link Field} is used instead.
