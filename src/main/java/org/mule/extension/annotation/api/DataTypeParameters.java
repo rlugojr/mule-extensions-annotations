@@ -7,7 +7,6 @@
 package org.mule.extension.annotation.api;
 
 import org.mule.extension.api.introspection.OperationModel;
-import org.mule.extension.api.runtime.ContentMetadata;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -18,7 +17,8 @@ import java.lang.reflect.Method;
 
 /**
  * Indicates that an {@link OperationModel} should expose parameters which
- * allow mutating the current {@link ContentMetadata}.
+ * allows the user to specify the @link org.mule.api.metadata.DataType} 
+ * of the annotated operation's output.
  * <p>
  * This annotation is intended to be used in {@link Method methods} which are
  * also annotated with {@link Operation}
@@ -28,7 +28,7 @@ import java.lang.reflect.Method;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface ContentMetadataParameters
+public @interface DataTypeParameters
 {
 
 }
