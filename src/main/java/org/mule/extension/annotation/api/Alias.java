@@ -22,7 +22,7 @@ import java.lang.annotation.Target;
  *
  * @since 1.0
  */
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Alias

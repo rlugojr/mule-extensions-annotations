@@ -11,7 +11,6 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.lang.reflect.Field;
 
 /**
  * Marks a field inside a mule extension as being a parameter that the user can set.
@@ -30,11 +29,5 @@ import java.lang.reflect.Field;
 @Documented
 public @interface Parameter
 {
-    /**
-     * If provided, sets the name that the parameter will have on the introspection model.
-     * Otherwise, the name of the annotated {@link Field} is used instead.
-     *
-     * @return a {@link String}. Might be blank but will never be {@code null}
-     */
-    String alias() default "";
+
 }
