@@ -74,12 +74,10 @@ import java.lang.annotation.Target;
  *
  *     public class Operations {
  *
- *         @Operation
  *         public void hello(String message, @ParameterGroup Options options) {
  *             ...
  *         }
  *
- *         @Operation
  *         public void goodBye(String message, @ParameterGroup Options options) {
  *
  *         }
