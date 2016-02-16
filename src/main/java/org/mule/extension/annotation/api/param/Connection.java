@@ -8,7 +8,7 @@ package org.mule.extension.annotation.api.param;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.PARAMETER;
-import org.mule.extension.annotation.api.Operation;
+import org.mule.extension.annotation.api.Operations;
 import org.mule.extension.api.runtime.source.Source;
 
 import java.lang.annotation.Documented;
@@ -19,7 +19,7 @@ import java.lang.annotation.Target;
 /**
  * Indicates that the annotated member should be injected with a currently active connection.
  * <p>
- * This annotation can either be applied to an argument of a method annotated with {@link Operation}
+ * This annotation can either be applied to an argument of an operation method {@link Operations}
  * or to a field of a class which extends the {@link Source} class. It is not to be used on
  * configurations
  *
